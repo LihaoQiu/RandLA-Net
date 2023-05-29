@@ -170,6 +170,9 @@ Licensed under the CC BY-NC-SA 4.0 license, see [LICENSE](./LICENSE).
 * 02/03/2020: Code available!
 * 15/11/2019: Initial release！
 
+### Lihao added
+See ouster files for custom data set collected using Ouster OS-1
+
 ## Related Repos
 1. [SoTA-Point-Cloud: Deep Learning for 3D Point Clouds: A Survey](https://github.com/QingyongHu/SoTA-Point-Cloud) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SoTA-Point-Cloud.svg?style=flat&label=Star)
 2. [SensatUrban: Learning Semantics from Urban-Scale Photogrammetric Point Clouds](https://github.com/QingyongHu/SpinNet) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SensatUrban.svg?style=flat&label=Star)
