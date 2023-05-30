@@ -62,7 +62,7 @@ Qualitative results of our RandLA-Net:
 | ![2](imgs/S3DIS_area2.gif)   | ![z](imgs/S3DIS_area3.gif) |
 | ------------------------------ | ---------------------------- |
 
-
+f
 
 ### (3) Semantic3D
 7zip is required to uncompress the raw data in this dataset, to install p7zip:
@@ -171,9 +171,16 @@ Licensed under the CC BY-NC-SA 4.0 license, see [LICENSE](./LICENSE).
 * 15/11/2019: Initial release！
 
 ### Lihao added
-See ouster files for custom data set collected using Ouster OS-1. Please run the files in the follwoing sequence to prepare Ouster data:
+See ouster files for custom data set collected using Ouster OS-1. 
+Please run the files in the follwoing sequence to prepare Ouster data:
 1. fileconverter.py. Run step 1 and upload all converted PCD files to Supervisely labeling site at https://supervisely.com/. After annotation job is done, download annotation (point cloud data is optional), and run step 2 to label each frame. Remeber to change the directory accordingly.
 2. ouster_data_prepare.py. Crop points according to your need. Simply train and test using the complete data frame seems to have poor perrformance duee to low percentage of rail points in the entire frame. After splitting the dataset, run 'filename' in /Train and /Validation, copy the filenames generated in the .txt file into 'ouster_train_csv_file_list' and 'ouster_test_csv_file_list' respectiely. Change .csv filename to .npy. Generate npy, proj, and proj.pkl file. After that, the data should be ready for training and testing.
+
+Labeling instruction:
+1. Upload PCD files. Due to some restrictions on Supervisely, it is impossible to upload over couple thousands of PCD data at one time. Selecting data that have different scenes and upload them for annotation would be a better choice. 
+2. To label at scale, create job and add people to the work so that multiple people can label together. 
+3. Create cuboid object, and use them to surround rail points. The labeling should be as precise as possible.
+4. Download annotations, and follow step 1 in data preparation.
 
 ## Related Repos
 1. [SoTA-Point-Cloud: Deep Learning for 3D Point Clouds: A Survey](https://github.com/QingyongHu/SoTA-Point-Cloud) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SoTA-Point-Cloud.svg?style=flat&label=Star)
