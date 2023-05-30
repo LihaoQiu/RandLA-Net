@@ -171,7 +171,9 @@ Licensed under the CC BY-NC-SA 4.0 license, see [LICENSE](./LICENSE).
 * 15/11/2019: Initial release！
 
 ### Lihao added
-See ouster files for custom data set collected using Ouster OS-1
+See ouster files for custom data set collected using Ouster OS-1. Please run the files in the follwoing sequence to prepare Ouster data:
+1. fileconverter.py. Run step 1 and upload all converted PCD files to Supervisely labeling site at https://supervisely.com/. After annotation job is done, download annotation (point cloud data is optional), and run step 2 to label each frame. Remeber to change the directory accordingly.
+2. ouster_data_prepare.py. Crop points according to your need. Simply train and test using the complete data frame seems to have poor perrformance duee to low percentage of rail points in the entire frame. After splitting the dataset, run 'filename' in /Train and /Validation, copy the filenames generated in the .txt file into 'ouster_train_csv_file_list' and 'ouster_test_csv_file_list' respectiely. Change .csv filename to .npy. Generate npy, proj, and proj.pkl file. After that, the data should be ready for training and testing.
 
 ## Related Repos
 1. [SoTA-Point-Cloud: Deep Learning for 3D Point Clouds: A Survey](https://github.com/QingyongHu/SoTA-Point-Cloud) ![GitHub stars](https://img.shields.io/github/stars/QingyongHu/SoTA-Point-Cloud.svg?style=flat&label=Star)
